@@ -16,17 +16,34 @@
 本工程是在基于Ubuntu操作系统的linux环境下进行，其中使用的编程工具为IntelliJ IDEA，使用的网络请求测试工具为insomnia，相应的数据库版本为MYSQL-5.6.47；hadoop-2.7.1；hbase-1.3.6.
 ### 快速入手使用步骤
 1. 成功安装mysql、hadoop、hbase数据库后，依次将三个数据库打开
+
 ![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/1.png)
  
 2. 将本项目代码clone至本地，在IDEA中打开该项目。
- 
+
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/2.png)
+
 3. 接着拷贝hos-basic.sql中的建表语句，在mysql终端执行该建表语句分别创建四张相互关联的表
  
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/3.png)
+ 
 4. 运行HosServerApp程序，构建基于三个数据库的海量大数据安全高效存储服务平台，打开测试网络端口
+
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/4.png)
  
 5. 打开网络测试工具Insomnia，执行insomnia_hos_api_test.json语句进行测试结构初始化
+
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/5.png)
  
 6. 在网络测试端口进行正常测试即可。
+
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/6-1.png)
+
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/6-2.png)
+
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/6-3.png)
+
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/6-4.png)
  
  
  
