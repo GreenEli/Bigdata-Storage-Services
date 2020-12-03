@@ -16,6 +16,7 @@
 本工程是在基于Ubuntu操作系统的linux环境下进行，其中使用的编程工具为IntelliJ IDEA，使用的网络请求测试工具为insomnia，相应的数据库版本为MYSQL-5.6.47；hadoop-2.7.1；hbase-1.3.6.
 ### 快速入手使用步骤
 1. 成功安装mysql、hadoop、hbase数据库后，依次将三个数据库打开
+![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/1.png)
  
 2. 将本项目代码clone至本地，在IDEA中打开该项目。
  
