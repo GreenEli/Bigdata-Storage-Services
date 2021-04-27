@@ -1,41 +1,41 @@
 # Bigdata-Storage-Services
-## 工程需求：
-21世纪以来，信息进入了指数型爆炸式增长，针对海量大数据的存储一直是实际应用的热点，且大数据条件下信息的安全性问题一直是研究的前沿方向，最后海量大数据应当具有高效查询的特点。本工程致力于满足的需求如下所示：
-1. 构建一个能存储海量大数据的存储服务平台
-2. 该存储服务平台应当能有效保证数据的安全性
-3. 海量大数据的查询应当相对快速、高效。
-## 项目说明
-1. 经过充分考虑，最终选举了hbase集群作为海量大数据的的存储数据库，由于其是基于Hadoop生态上搭建的，能充分利用集群的闲散资源进行分布式计算和存储。
-2. 通过构建特殊的存储模式提供有效安全性保障在IDEA中打开该项目，，存储模式如下：本文设计了四张相互关联的表（用户表、数据表、权限token表、关联表），其中通过权限分级进一步来提升用户所创建表的安全性能。即用户只能有权对自己创建的表具有所有权，或者得到其它创建者所有权的token才能对其它表具有相应的修改权利。
-3. 数据库的查询一方面从分利用hbase的rowkey值的唯一性，使用字典排序进行数据的快速查询，另一方面海量数据的存储结构本项目中设计为树状层次型（多叉树结构）的，进一步优化加快了数据的查询效率。
-## 准备基础
-1. 本项目应用的数据库有MYSQL、HADOOP、HBASE
-2. 本项目编程语言为java
-3. 本项目需对网络接口进行请求测试
-## 快速入手使用说明：
-本工程是在基于Ubuntu操作系统的linux环境下进行，其中使用的编程工具为IntelliJ IDEA，使用的网络请求测试工具为insomnia，相应的数据库版本为MYSQL-5.6.47；hadoop-2.7.1；hbase-1.3.6.
-### 快速入手使用步骤
-1. 成功安装mysql、hadoop、hbase数据库后，依次将三个数据库打开
+## Engineering requirements:
+Since the 21st century, information has entered an exponential explosive growth. The storage of massive big data has always been a hot spot for practical applications, and the security of information under big data conditions has always been the forefront of research, finally, massive big data should be highly efficient The characteristics of the query. The needs of this project are as follows:
+1. Build a storage service platform that can store massive amounts of big data.
+2. The storage service platform should be able to effectively guarantee data security.
+3. The query of massive big data should be relatively fast and efficient.
+## project instruction
+1. After full consideration, the hbase cluster was finally elected as the storage database for massive big data, because it is built on the Hadoop ecosystem, it can make full use of the idle resources of the cluster for distributed computing and storage.
+2. Provide effective security guarantee by constructing a special storage mode, open the project in IDEA, and the storage mode is as follows: this article designs four interrelated tables (user table, data table, permission token table, and association table), among which further improve the security performance of the tables created by users through the authority classification, that is, users can only have the right to own the tables they create, or the tokens owned by other creators can have the corresponding modification rights to other tables.
+3. The query of the database uses the uniqueness of hbase's rowkey value on the one hand, and uses dictionary sorting to quickly query data, on the other hand, the storage structure of massive data is designed as a tree-like hierarchy (multiple tree structure) in this project, further optimization speeds up the efficiency of data query.
+## Prepare the basics
+1. The databases used in this project are MYSQL, HADOOP, HBASE.
+2. The programming language of this project is java.
+3. This project requires request testing of the network interface.
+## Quick start instructions:
+This project is carried out in a Linux environment based on the Ubuntu operating system, the programming tool used is IntelliJ IDEA, the network request testing tool used is insomnia, and the corresponding database version is MYSQL-5.6.47; hadoop-2.7.1; hbase -1.3.6.
+### Quick start steps
+1. After successfully installing the mysql, hadoop, and hbase databases, open the three databases in turn.
 
 ![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/1.png)
  
-2. 将本项目代码clone至本地，在IDEA中打开该项目。
+2. Clone the code of this project to the local, and open the project in IDEA.
 
 ![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/2.png)
 
-3. 接着拷贝hos-basic.sql中的建表语句，在mysql终端执行该建表语句分别创建四张相互关联的表
+3. Then copy the table building statement in hos-basic.sql, and execute the table building statement in the mysql terminal to create four interrelated tables.
  
 ![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/3.png)
  
-4. 运行HosServerApp程序，构建基于三个数据库的海量大数据安全高效存储服务平台，打开测试网络端口
+4. Run the HosServerApp program to build a safe and efficient storage service platform for massive big data based on three databases, and open the test network port.
 
 ![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/4.png)
  
-5. 打开网络测试工具Insomnia，执行insomnia_hos_api_test.json语句进行测试结构初始化
+5. Open the network test tool Insomnia, execute the insomnia_hos_api_test.json statement to initialize the test structure.
 
 ![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/5.png)
  
-6. 在网络测试端口进行正常测试即可。
+6. Perform a normal test on the network test port.
 
 ![image](https://github.com/GreenEli/Bigdata-Storage-Services/blob/main/pic1/6-1.png)
 
